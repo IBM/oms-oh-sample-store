@@ -1,0 +1,94 @@
+{
+  "OrganizationCode": "Aurora-Corp",
+  "PostalCode": "80201",
+  "ProductClass": "Good",
+  "UnitOfMeasure": "EACH",
+  "Currency": "USD",
+  "Symbol": "$",
+  "DistributionGroupId": "OMTZ_DG",
+  "DeliveryMethod": "SHP",
+  "ItemList": {
+    "Item": [
+      {
+        "ItemID": "AuroraWMDRS-001",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-005",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-009",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-014",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-030",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-045",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-057",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-075",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-086",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-105",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-125",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-140",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-155",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-170",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-185",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-200",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-215",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-235",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-260",
+        "UnitOfMeasure": "EACH"
+      },
+      {
+        "ItemID": "AuroraWMDRS-280",
+        "UnitOfMeasure": "EACH"
+      }
+    ]
+  }
+}

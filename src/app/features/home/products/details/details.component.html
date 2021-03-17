@@ -1,0 +1,97 @@
+<div class="container-fluid">
+		<div class="card card-horizontal bg-light">
+			<div class="container-fluid">
+				<div *ngIf="isInitialized" class="row">
+					<div class="col-md-3 col-lg-4 col-sm-6 bg-white">
+						<div class="">
+						  <div class="tab-pane active" id="pic-1"><a><img class="card-img img-fluid"  src="{{product.PrimaryInformation.ImageLocation}}/{{product.PrimaryInformation.ImageID}}"/></a></div>
+						</div>		
+					</div>
+					<div class="details col-md-9 col-lg-8 col-sm-6 pt-1 p-3">
+					  <h6><span *ngFor="let c of categories" class="badge badge-dark">{{c}}</span></h6>
+						<h3 class="product-title">{{product.PrimaryInformation.ShortDescription}}</h3>
+						<p class="product-description">{{product.PrimaryInformation.Description}}</p>
+						<div class="price">{{symbol}}{{product.UnitPrice}}</div>
+						<div class="colors d-flex justify-items-middle my-1">
+							<div class="d-block mt-2 text-center">
+								<div class="small-text ">{{ 'PDP.BLACK' | translate }}</div>
+								<div class="color black selected" data-toggle="tooltip" title="{{ 'PDP.NOT_IN_STORE' | translate }}"></div>
+							</div>
+							<div class="d-block">
+								<div class="d-block"><span class="d-block spacer"></span></div>
+								<div class="color blue ml-1 mt-1"></div>
+							</div>
+						</div>
+						<h6 class="font-weight-bold mt-3">{{ 'PDP.SIZE' | translate }} 2</h6>
+						<div class="sizes d-flex">
+							<div class="size" data-toggle="tooltip" title="0">0</div>
+							<div class="size selected" data-toggle="tooltip" title="2">2</div>
+							<div class="size" data-toggle="tooltip" title="4">4</div>
+							<div class="size" data-toggle="tooltip" title="6">6</div>
+            			</div>
+						<div class="row mt-3">
+							<div class="col">
+							   <span *ngIf="availQtyAtDG == 0" class="avl-qty font-weight-bold text-danger">{{ 'PDP.OUT_OF_STOCK' | translate }}</span>
+							   <span *ngIf="availQtyAtDG != 0 && availQtyAtDG <= qty" class="avl-qty font-weight-bold text-danger">{{ 'PDP.ONLINE_FEW_IN_STOCK' | translate: { availQtyAtDG: availQtyAtDG } }}</span>
+							   <span *ngIf="availQtyAtDG > qty" class="avl-qty font-weight-bold text-success">{{ 'PDP.ONLINE_AVL_IN_STOCK_AT' | translate: { availQtyAtDG: availQtyAtDG } }}</span>
+							</div>
+						</div>
+						<div class="row mt-3">
+								<div class="col d-flex align-items-start">
+										<div class="pr-1">
+												<div class="font-weight-bold">{{ 'PDP.QUANTITY' | translate }}</div>
+												<input type="text" id="qtyField" name="qtyField" value="1" class="form-control">
+										</div>
+										<button class="btn btn-primary my-4">{{ 'PDP.ADD_TO_CART' | translate }}</button>
+								</div>
+						</div>
+						<div class="row mt-1">
+							<div class="col d-flex align-items-start">
+								<div class="pr-1">
+									<div class="font-weight-bold">{{ 'PDP.ENTER_POSTAL_CODE' | translate }}</div>
+									<input type="text" id="postalCodeField" name="postalCodeField" [(ngModel)]="postalCode" class="form-control">
+								</div>
+								<button class="btn btn-primary my-4" (click)="getEDD()">{{ 'PDP.CHECK_AVL' | translate }}</button>
+							</div>
+						</div>
+						<div class="row py-2 pl-3" *ngIf="eddResponse">
+							<div *ngFor="let edd of eddResponse; index as i" [ngClass]="{'m-2': edd && edd.result}">
+								<ng-container *ngIf="edd && edd.result">
+								<div class="col options p-2 mr-2 bg-white" [ngClass]="{'highlight': i==0}">
+                  					<div class="avl-text"><span class="font-weight-bold">{{ 'PDP.CHOOSE' | translate }} </span>{{edd.carrierService}}</div>
+									<div class="avl-text"><span class="font-weight-bold">{{ 'PDP.ORDER_BY' | translate }} </span>{{edd.result.placeOrderBy | date:'EEEE, MMMM d, y, h:mm a' }}</div>
+									<div class="avl-text"><span class="font-weight-bold">{{ 'PDP.DEL_BY' | translate }} </span>{{edd.result.deliveryTime | date:'EEEE, MMMM d, y, h:mm a'}}</div>	
+								</div>
+								</ng-container>						
+							</div>
+            			</div>
+						<!-- in stock at section -->
+						<div *ngIf="eddResponse" class="row pl-2">
+							<div class="col">
+								<span class="text-success">{{ 'PDP.STORE_PICK_AVL' | translate }}</span>
+							</div>
+						</div>
+						<div *ngIf="eddResponse" class="row pl-2">
+							<div class="col">
+								<span *ngIf="availQtyAtNode == 0" class="text-danger">{{ 'PDP.OOS_AT' | translate: { shipNode: shipNode } }}</span>
+								<span *ngIf="availQtyAtNode != 0 && availQtyAtNode <= qty" class="text-danger">{{ 'PDP.FEW_IN_STOCK' | translate: { availQtyAtNode: availQtyAtNode, shipNode: shipNode } }}</span>
+								<span *ngIf="availQtyAtNode > qty" class="text-success">{{ 'PDP.AVL_IN_STOCK_AT' | translate: { availQtyAtNode: availQtyAtNode, shipNode: shipNode } }}</span> 
+							</div>
+						</div>
+						<div *ngIf="eddResponse" class="row pl-2">
+							<div class="col">
+								<span>{{ 'PDP.CURBSIDE_MSG' | translate }}</span>
+							</div>
+						</div>
+						<div *ngIf="eddResponse" class="row pl-2">
+							<div class="col">
+								<a href="">{{ 'PDP.NEARYBY_STORES' | translate }}</a>
+							</div>
+						</div>
+						<!-- end in stock at -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+

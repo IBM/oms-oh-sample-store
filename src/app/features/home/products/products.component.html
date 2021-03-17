@@ -1,0 +1,29 @@
+  <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-3 mt-4" *ngFor="let product of products">
+          <div class="card card-inverse card-info h-100 d-flex flex-column justify-content-between">
+                <a [routerLink]="['/home/products', product.ItemID]"><img class="card-img card-img-top img-fluid" src="{{product.PrimaryInformation.ImageLocation}}/{{product.PrimaryInformation.ImageID}}"/></a>
+                <div class="card-body">
+                    <h5 class="card-title"><a [routerLink]="['/home/products', product.ItemID]" class="card-link text-dark">{{product.PrimaryInformation.ShortDescription}}</a></h5>
+                    <p class="card-text"> {{symbol}}{{product.UnitPrice}}</p>
+                </div>
+                <div class="card-footer p-2">
+                    <div *ngIf="!product.fastestEDD" class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only"> {{ 'APP_COMPONENT.MSG_LOADING' | translate }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="edd" *ngIf="product.fastestEDD && product.fastestEDD.result">
+							<div class="avl-text">
+                            <div>{{ 'PLP.ORDER_WITHIN' | translate: { hours: product.fastestEDD.orderWithin } }}</div>
+                                <!-- <span class="font-weight-bold">Order by: </span>
+                                <span class="small-text">{{product.fastestEDD.result.placeOrderBy | date:'EEEE, MMMM d, y, h:mm:ss a' }}</span> -->
+                            </div>
+							<div class="avl-text">
+                                <span class="font-weight-bold">{{ 'PLP.FASTEST_DEL' | translate }}</span>
+                                <span class="small-text">{{product.fastestEDD.result.deliveryTime | date:'EEEE, MMMM d, y, h:mm a'}}</span>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
