@@ -11,7 +11,7 @@ Use this repository to set up a sample store within Order Hub, load a sample cat
 3. Install [Yarn](https://yarnpkg.com/en/docs/install).
 4. Preferably complete: [Connecting to GitHub with SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh)
 5. Install Angular CLI 8.3.3 globally: `npm install -g @angular/cli@8.3.3`
-6. Clone oms-oh-sample-store git repository: `git clone git@github.com:IBM/oms-oh-sample-store.git`: 
+6. Clone oms-oh-sample-store git repository: `git clone git@github.ibm.com:WCI/oms-oh-sample-store.git`: 
 7. Install all dependencies by using Yarn: `yarn install`
     * To clear yarn cache, use: `yarn cache clean`
     * To ignore cache and add any dependency, use: `yarn add <any dependency name> --force`
@@ -78,13 +78,30 @@ https://www.ibm.com/support/knowledgecenter/SSGTJF/developing/custom_uploadtobuc
 Note: skip step 1 about defining the custom menus from the documentation link.
 
 A short summary of the steps outlined in the documentation link above are:
+
+### Mac or *nix
 ```
 export APP_NAME=oms-oh-sample-store
-export BUC_HOSTNAME=https://app.omsbusinessusercontrols.ibm.com
+export ORDER_HUB_HOSTNAME=https://app.omsbusinessusercontrols.ibm.com
 export CUSTOMIZATION_CONTEXT_ROOT=<your tenant CUSTOMIZATION_CONTEXT_ROOT>
+export CLIENT_ID=<your tenant CLIENT_ID>
+export CLIENT_SECRET=<your tenant CLIENT_SECRET>
+
 yarn build --source-map --base-href=$CUSTOMIZATION_CONTEXT_ROOT/$APP_NAME/ --deploy-url=$CUSTOMIZATION_CONTEXT_ROOT/$APP_NAME/
-./publish-to-buc.sh dist <your tenant CLIENT_ID> <your tenant CLIENT_SECRET>
+yarn run publishToOrderHub
 ```  
+
+### Windows (Powershell)
+```
+$Env:APP_NAME="oms-oh-sample-store"
+$Env:ORDER_HUB_HOSTNAME="https://app.omsbusinessusercontrols.ibm.com"
+$Env:CUSTOMIZATION_CONTEXT_ROOT=<your tenant CUSTOMIZATION_CONTEXT_ROOT>
+$Env:CLIENT_ID=<your tenant CLIENT_ID>
+$Env:CLIENT_SECRET=<your tenant CLIENT_SECRET>
+
+yarn build --source-map --base-href=$Env:CUSTOMIZATION_CONTEXT_ROOT/$Env:APP_NAME/ --deploy-url=$Env:CUSTOMIZATION_CONTEXT_ROOT/$Env:APP_NAME/
+yarn run publishToOrderHub
+```
 Note: you can get the **CUSTOMIZATION_CONTEXT_ROOT**, **CLIENT_ID** and **CLIENT_SECRET** for your tenant from **Order Hub -> Settings -> Configurations -> Add ons -> Customization configuration**.
 
 ## Using the sample store
