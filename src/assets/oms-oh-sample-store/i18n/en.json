@@ -1,0 +1,32 @@
+{
+    "APP_COMPONENT": {
+        "APP_NAME": "Order Hub Store",
+        "MSG_LOADING": "Loading...",
+        "MSG_ERROR": "Loading, refresh page if it is not redirecting to main page within 30 seconds."
+    },
+    "PLP": {
+        "FASTEST_DEL": "Fastest delivery:",
+        "ORDER_WITHIN": "Order within {{ hours }} hours"
+    },
+    "PDP": {
+        "BLACK": "Black",
+        "NOT_IN_STORE": "Not in store",
+        "SIZE": "Size",
+        "OUT_OF_STOCK": "Out of stock",
+        "ONLINE_FEW_IN_STOCK": "Only {{availQtyAtDG}} - In stock",
+        "ONLINE_AVL_IN_STOCK_AT": "{{availQtyAtDG}} - In stock",
+        "QUANTITY": "Quantity",
+        "ADD_TO_CART": "Add to cart",
+        "ENTER_POSTAL_CODE": "Enter postal code",
+        "CHECK_AVL": "Check availability",
+        "CHOOSE": "Choose:",
+        "ORDER_BY": "Order by:",
+        "DEL_BY": "Delivered by:",
+        "STORE_PICK_AVL": "Store pickup available",
+        "CURBSIDE_MSG": "Curbside pickup available at this location",
+        "NEARYBY_STORES": "Check nearby stores",
+        "OOS_AT": "Out of stock at {{shipNode}}",
+        "FEW_IN_STOCK": "Only {{availQtyAtNode}} in stock at {{shipNode}}",
+        "AVL_IN_STOCK_AT": "{{availQtyAtNode}} in stock at {{shipNode}}"
+    }
+}

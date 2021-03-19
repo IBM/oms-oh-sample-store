@@ -1,0 +1,69 @@
+[
+  {
+    "featureId": "custom-oms-oh-sample-store",
+    "sequence": 0.985,
+    "title": "Samples",
+    "iconName": "website-20",
+    "link": "/oms-oh-sample-store/",
+    "path": "/oms-oh-sample-store",
+    "description": [
+        {
+            "locale": "en_US",
+            "language": "en",
+            "title": "Samples"
+        }
+    ],
+    "hidden": false,
+    "state": "ACTIVE",
+    "allowedRoles": [
+        "Fulfillment Manager",
+        "Tenant Administrator"
+    ],
+    "type": "IFRAME"
+  },
+  {
+    "featureId": "custom-sample-storefront",
+    "parentFeatureId": "custom-oms-oh-sample-store",
+    "sequence": 0,
+    "title": "Store",
+    "iconName": "website-20",
+    "link": "/oms-oh-sample-store/",
+    "path": "/oms-oh-sample-store",
+    "description": [
+        {
+            "locale": "en_US",
+            "language": "en",
+            "title": "Store"
+        }
+    ],
+    "hidden": false,
+    "state": "ACTIVE",
+    "allowedRoles": [
+        "Fulfillment Manager",
+        "Tenant Administrator"
+    ],
+    "type": "IFRAME"
+  },
+  {
+    "featureId": "custom-storefront-dataload",
+    "parentFeatureId": "custom-oms-oh-sample-store",
+    "sequence": 0.1,
+    "title": "Dataload",
+    "iconName": "website-20",
+    "link": "/oms-oh-sample-store/home/dataload",
+    "path": "/oms-oh-sample-store/home/dataload",
+    "description": [
+        {
+            "locale": "en_US",
+            "language": "en",
+            "title": "Dataload"
+        }
+    ],
+    "hidden": false,
+    "state": "ACTIVE",
+    "allowedRoles": [
+        "Tenant Administrator"
+    ],
+    "type": "IFRAME"
+  }
+]
