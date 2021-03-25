@@ -11,7 +11,7 @@ Use this repository to set up a sample store within Order Hub, load a sample cat
 3. Install [Yarn](https://yarnpkg.com/en/docs/install).
 4. Preferably complete: [Connecting to GitHub with SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh)
 5. Install Angular CLI 8.3.3 globally: `npm install -g @angular/cli@8.3.3`
-6. Clone oms-oh-sample-store git repository: `git clone git@github.ibm.com:WCI/oms-oh-sample-store.git`: 
+6. Clone oms-oh-sample-store git repository: `git clone git@github.com:IBM/oms-oh-sample-store.git`
 7. Install all dependencies by using Yarn: `yarn install`
     * To clear yarn cache, use: `yarn cache clean`
     * To ignore cache and add any dependency, use: `yarn add <any dependency name> --force`
